@@ -1,0 +1,7 @@
+<FilesMatch "\.(mp4)$">
+    Header set Content-Disposition "inline"
+</FilesMatch>
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !\.(mp4)$
+RewriteRule ^(.*)$ http://localhost:4000/$1 [P]
